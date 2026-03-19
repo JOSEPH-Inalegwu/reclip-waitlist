@@ -550,10 +550,11 @@ footer {
   gap: 1.5rem;
   padding: 3rem;
   background: hsla(var(--secondary) / 0.8);
-  border: 1px solid hsl(var(--primary) / 0.3);
+  border: 1px solid hsl(var(--primary) / 0.2);
   border-radius: var(--radius);
   animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   max-width: 500px;
+  color: hsl(var(--foreground));
   margin: 0 auto;
 }
 
@@ -685,10 +686,10 @@ footer {
   min-width: 300px;
   max-width: 400px;
   padding: 1rem 1.25rem;
-  background: hsl(var(--secondary));
+  background: hsl(var(--card));
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
-  color: white;
+  color: hsl(var(--foreground));
   display: flex;
   align-items: center;
   gap: 0.75rem;
