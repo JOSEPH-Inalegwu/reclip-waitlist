@@ -149,8 +149,15 @@ if (waitlistForm) {
     waitlistForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const submitBtn = waitlistForm.querySelector('button');
-        const emailInput = waitlistForm.querySelector('input');
+        const emailInput = waitlistForm.querySelector('input[type="email"]');
         const email = emailInput.value.trim().toLowerCase();
+
+        // Honeypot Check
+        const honeypot = waitlistForm.querySelector('input[name="b_username"]');
+        if (honeypot && honeypot.value) {
+            console.warn("Bot detected via honeypot.");
+            return;
+        }
 
         // Local Duplicate Check
         const storedEmail = localStorage.getItem('reclip_email');
@@ -186,7 +193,7 @@ if (waitlistForm) {
 
             // 2. Handle Status
             if (data.status === 'duplicate') {
-                showToast("You're already on the Inner Circle list! 🚀");
+                showToast("You're already on the list! Check your inbox. 📧");
 
                 // Still mark as joined locally
                 localStorage.setItem('reclip_joined', 'true');
@@ -205,6 +212,10 @@ if (waitlistForm) {
                 // Reset button but keep text
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnContent;
+
+                // Toggle UI to success state
+                document.getElementById('form-state').style.display = 'none';
+                document.getElementById('success-state').style.display = 'block';
 
             } else if (response.ok || data.status === 'success') {
                 // Success path
@@ -225,7 +236,11 @@ if (waitlistForm) {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnContent;
 
-                showToast("Success! You're on the list. 🚀");
+                // Toggle UI to success state
+                document.getElementById('form-state').style.display = 'none';
+                document.getElementById('success-state').style.display = 'block';
+
+                showToast("Check your inbox for a message from Joseph 📧");
             } else {
                 throw new Error(data.message || "Webhook failed");
             }

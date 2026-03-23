@@ -58,15 +58,17 @@
           <div id="form-state">
             <form id="waitlist-form" class="waitlist-form">
               <input type="email" placeholder="Enter your creator email" required title="Please enter a valid email">
+              <!-- Honeypot for Bot Protection -->
+              <input type="text" name="b_username" style="display: none;" tabindex="-1" autocomplete="off">
               <button type="submit" id="main-submit-btn" class="btn btn-hero">Claim Founder Perk <i
                   data-lucide="arrow-right"></i></button>
             </form>
           </div>
 
           <div id="success-state" style="display: none;">
-            <div class="success-box">
+            <div class="success-message" style="display: flex;">
               <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">You're in the Inner Circle! 🚀</h3>
-              <p class="text-sm text-muted">Check your email for your Founder Perk.</p>
+              <p class="text-sm text-muted">Check your inbox for a message from Joseph 📧</p>
               <div style="margin-top: 1rem;">
                 <a href="https://x.com/JosephOnTech" target="_blank" rel="noopener noreferrer" class="text-xs"
                   style="color: hsl(var(--foreground)); text-decoration: underline; opacity: 0.8;">
