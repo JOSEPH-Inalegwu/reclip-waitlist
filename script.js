@@ -3,8 +3,8 @@
   -----------------------------------------------
   Webhook URL: Make.com integration
 */
-const WEBHOOK_URL = "https://hook.eu1.make.com/i6wf4biwhabjqds5v0kwd9sm4mgdwxd7";
-const COUNT_URL = "https://hook.eu1.make.com/mkmhsbve82quxrsa43lu3bnmaa7earou";
+const WEBHOOK_URL = "https://hook.eu1.make.com/ti2ib2urq2rbryc51blop0wll42l4f2i";
+const COUNT_URL = "https://hook.eu1.make.com/fttx7uldqbbo5xkm10o9agc8v2k4t0xu";
 const TOTAL_CAP = 150;
 
 // Initialize Icons
